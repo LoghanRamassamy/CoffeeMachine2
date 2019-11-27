@@ -30,7 +30,7 @@ public class CustomerTest {
             "H:2:0, M:Drink maker makes 1 chocolate with 2 sugars and a stick",
             "C:3:0, M:Drink maker makes 1 coffee with 3 sugars and a stick"
     })
-    public void customer_instruction_is_drink_with_one_sugar_should_return_drink_message_with_sugar(String instruction, String expected) {
+    public void customer_instruction_is_drink_with_sugar_should_return_drink_message_with_sugar(String instruction, String expected) {
         // Given
         Customer customer = new Customer();
 
