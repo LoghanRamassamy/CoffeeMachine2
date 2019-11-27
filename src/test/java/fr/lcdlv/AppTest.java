@@ -7,8 +7,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTest {
     @Test
-    public void customer_instruction_is_T_should_return_tea() {
+    public void customer_instruction_is_T_should_return_tea_message() {
         Customer customer = new Customer();
-        assertThat(customer.order("T")).isEqualTo("Tea");
+        assertThat(customer.order("T")).isEqualTo("M:Drink maker makes 1 tea");
     }
 }
