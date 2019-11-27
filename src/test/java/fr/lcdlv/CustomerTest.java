@@ -26,8 +26,8 @@ public class CustomerTest {
     @ParameterizedTest
     @CsvSource({
             "T:1, M:Drink maker makes 1 tea with 1 sugars and a stick",
-            "T:2, M:Drink maker makes 1 tea with 2 sugars and a stick",
-            "C:3, M:Drink maker makes 1 tea with 3 sugars and a stick"
+            "H:2, M:Drink maker makes 1 chocolate with 2 sugars and a stick",
+            "C:3, M:Drink maker makes 1 coffee with 3 sugars and a stick"
     })
     public void customer_instruction_is_drink_with_one_sugar_should_return_drink_message_with_sugar(String instruction, String expected) {
         Customer customer = new Customer();
