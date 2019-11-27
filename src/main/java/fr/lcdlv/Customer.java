@@ -25,8 +25,8 @@ public class Customer {
     }
 
     private String getDrinkType(String instruction) {
-        String[] arrOfStr = splitInstruction(instruction);
-        String type = arrOfStr[0];
+        String[] instructionElements = splitInstruction(instruction);
+        String type = instructionElements[0];
         return DrinkType.valueOf(type).getName();
     }
 
