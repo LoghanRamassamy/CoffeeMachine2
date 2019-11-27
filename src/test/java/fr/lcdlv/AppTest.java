@@ -17,4 +17,10 @@ public class AppTest {
         Customer customer = new Customer();
         assertThat(customer.order("H")).isEqualTo("M:Drink maker makes 1 chocolate");
     }
+
+    @Test
+    public void customer_instruction_is_C_should_return_coffee_message() {
+        Customer customer = new Customer();
+        assertThat(customer.order("C")).isEqualTo("M:Drink maker makes 1 coffee");
+    }
 }
