@@ -38,4 +38,13 @@ public class CustomerTest {
         assertThat(result).isEqualTo("Drink maker makes 1 tea with 2 sugars and a stick");
     }
 
+    @Test
+    public void customer_instruction_is_drink_with_three_sugar_should_return_drink_message_with_sugar() {
+        Customer customer = new Customer();
+
+        String result = customer.order("T:3");
+
+        assertThat(result).isEqualTo("Drink maker makes 1 tea with 3 sugars and a stick");
+    }
+
 }
