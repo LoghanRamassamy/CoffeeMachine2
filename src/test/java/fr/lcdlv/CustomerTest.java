@@ -8,11 +8,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CustomerTest {
     @ParameterizedTest
     @CsvSource({
-            "T, M:Drink maker makes 1 tea",
-            "H, M:Drink maker makes 1 chocolate",
-            "C, M:Drink maker makes 1 coffee"
+            "T::, M:Drink maker makes 1 tea with no sugar and therefore no stick",
+            "H::, M:Drink maker makes 1 chocolate with no sugar and therefore no stick",
+            "C::, M:Drink maker makes 1 coffee with no sugar and therefore no stick"
     })
-    public void customer_instruction_is_drink_should_return_drink_message(Instruction instruction, String expected) {
+    public void customer_instruction_is_drink_without_sugar_should_return_drink_message_without_sugar(String instruction, String expected) {
         // Given
         Customer customer = new Customer();
 
