@@ -8,7 +8,7 @@ public class Customer {
 
     public String order(String instruction) {
         String nbSugar = numberOfSugar(instruction);
-      return "Drink maker makes 1 tea with " + nbSugar + " sugars and a stick";
+      return "M:Drink maker makes 1 tea with " + nbSugar + " sugars and a stick";
     }
 
     private String numberOfSugar(String instruction) {
