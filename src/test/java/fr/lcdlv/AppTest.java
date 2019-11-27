@@ -1,26 +1,18 @@
 package fr.lcdlv;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTest {
-    @Test
-    public void customer_instruction_is_T_should_return_tea_message() {
+    @ParameterizedTest
+    @CsvSource({"T, M:Drink maker makes 1 tea", "H, M:Drink maker makes 1 chocolate", "C, M:Drink maker makes 1 coffee"})
+    public void customer_instruction_is_drink_should_return_drink_message(String instruction, String expected) {
         Customer customer = new Customer();
-        assertThat(customer.order("T")).isEqualTo("M:Drink maker makes 1 tea");
+        assertThat(customer.order(instruction)).isEqualTo(expected);
     }
 
-    @Test
-    public void customer_instruction_is_H_should_return_chocolate_message() {
-        Customer customer = new Customer();
-        assertThat(customer.order("H")).isEqualTo("M:Drink maker makes 1 chocolate");
-    }
-
-    @Test
-    public void customer_instruction_is_C_should_return_coffee_message() {
-        Customer customer = new Customer();
-        assertThat(customer.order("C")).isEqualTo("M:Drink maker makes 1 coffee");
-    }
 }
