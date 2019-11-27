@@ -1,13 +1,13 @@
 package fr.lcdlv;
 
-public enum Instruction {
+public enum DrinkType {
     T("tea"),
     H("chocolate"),
     C("coffee");
 
     private final String name;
 
-    Instruction(String name) {
+    DrinkType(String name) {
         this.name = name;
     }
 
