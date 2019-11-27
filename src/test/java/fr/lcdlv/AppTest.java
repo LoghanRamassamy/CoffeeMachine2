@@ -13,8 +13,8 @@ public class AppTest {
     }
 
     @Test
-    public void customer_instruction_is_T_should_return_chocolate_message() {
+    public void customer_instruction_is_H_should_return_chocolate_message() {
         Customer customer = new Customer();
-        assertThat(customer.order("C")).isEqualTo("M:Drink maker makes 1 chocolate");
+        assertThat(customer.order("H")).isEqualTo("M:Drink maker makes 1 chocolate");
     }
 }
