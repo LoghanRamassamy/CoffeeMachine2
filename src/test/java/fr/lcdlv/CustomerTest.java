@@ -41,16 +41,19 @@ public class CustomerTest {
         assertThat(result).isEqualTo(expected);
     }
 
-    @Test
-    public void customer_instruction_is_tea_without_sugar_no_enough_money_should_return_tea_message_with_money_missing() {
+    @ParameterizedTest
+    @CsvSource({
+            "T:0:0.2, M:Money missing 0.2"
+    })
+    public void customer_instruction_is_drink_no_enough_money_should_return_drink_message_with_money_missing(String instruction, String expected) {
         // Given
         Customer customer = new Customer();
 
         // When
-        String result = customer.send("T:0:0.2");
+        String result = customer.send(instruction);
 
         // Then
-        assertThat(result).isEqualTo("M:Money missing 0.2");
+        assertThat(result).isEqualTo(expected);
     }
 
 }
