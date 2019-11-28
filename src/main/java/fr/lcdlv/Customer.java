@@ -7,12 +7,16 @@ public class Customer {
 
     public String send(String instruction) {
         splitInstruction(instruction);
-        if(drink.getCost() >= nbMoney) return generateMessage();
         return generateMessage();
     }
 
     private String generateMessage() {
-        return "M:Drink maker makes 1 " + drink.getName() + concatSugar(nbSugar);
+        if(isEnoughMoney()) return "M:Drink maker makes 1 " + drink.getName() + concatSugar(nbSugar);
+        return "M:Money missing " + (drink.getCost() - nbMoney);
+    }
+
+    private boolean isEnoughMoney() {
+        return nbMoney >= drink.getCost();
     }
 
     private String concatSugar(String nbSugar) {

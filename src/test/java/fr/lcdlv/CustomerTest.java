@@ -26,9 +26,9 @@ public class CustomerTest {
 
     @ParameterizedTest
     @CsvSource({
-            "T:1:0, M:Drink maker makes 1 tea with 1 sugars and a stick",
-            "H:2:0, M:Drink maker makes 1 chocolate with 2 sugars and a stick",
-            "C:3:0, M:Drink maker makes 1 coffee with 3 sugars and a stick"
+            "T:1:0.4, M:Drink maker makes 1 tea with 1 sugars and a stick",
+            "H:2:0.5, M:Drink maker makes 1 chocolate with 2 sugars and a stick",
+            "C:3:0.6, M:Drink maker makes 1 coffee with 3 sugars and a stick"
     })
     public void customer_instruction_is_drink_with_sugar_should_return_drink_message_with_sugar(String instruction, String expected) {
         // Given
@@ -42,15 +42,15 @@ public class CustomerTest {
     }
 
     @Test
-    public void customer_instruction_is_tea_without_sugar_with_exact_money_should_return_tea_message_without_sugar_with_exact_money() {
+    public void customer_instruction_is_tea_without_sugar_no_enough_money_should_return_tea_message_with_money_missing() {
         // Given
         Customer customer = new Customer();
 
         // When
-        String result = customer.send("T:0:0.4");
+        String result = customer.send("T:0:0.2");
 
         // Then
-        assertThat(result).isEqualTo("M:Drink maker makes 1 tea with no sugar and therefore no stick");
+        assertThat(result).isEqualTo("M:Money missing 0.2");
     }
 
 }

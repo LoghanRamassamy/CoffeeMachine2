@@ -8,11 +8,6 @@ public enum Drink {
     private final String name;
     private final Double cost;
 
-    Drink(String name) {
-        this.name = name;
-        this.cost = 0.0;
-    }
-
     Drink(String name, Double cost) {
         this.name = name;
         this.cost = cost;
