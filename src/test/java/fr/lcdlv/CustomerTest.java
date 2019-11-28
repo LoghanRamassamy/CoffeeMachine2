@@ -9,10 +9,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CustomerTest {
     @ParameterizedTest
     @CsvSource({
-            "T::, M:Drink maker makes 1 tea with no sugar and therefore no stick",
-            "T:0:0, M:Drink maker makes 1 tea with no sugar and therefore no stick",
-            "H::, M:Drink maker makes 1 chocolate with no sugar and therefore no stick",
-            "C::, M:Drink maker makes 1 coffee with no sugar and therefore no stick"
+            "T:0:0.4, M:Drink maker makes 1 tea with no sugar and therefore no stick",
+            "H:0:0.5, M:Drink maker makes 1 chocolate with no sugar and therefore no stick",
+            "C:0:0.6, M:Drink maker makes 1 coffee with no sugar and therefore no stick"
     })
     public void customer_instruction_is_drink_without_sugar_should_return_drink_message_without_sugar(String instruction, String expected) {
         // Given
