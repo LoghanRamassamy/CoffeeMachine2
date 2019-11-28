@@ -11,7 +11,7 @@ public class Customer {
     }
 
     private String generateMessage() {
-        if(isEnoughMoney()) return "M:Drink maker makes 1 " + drink.getName() + concatSugar(nbSugar);
+        if (isEnoughMoney()) return "M:Drink maker makes 1 " + drink.getName() + concatSugar(nbSugar);
         return "M:Money missing " + calculateMissingMoney();
     }
 
@@ -25,7 +25,7 @@ public class Customer {
 
     private String concatSugar(String nbSugar) {
         if (hasSugar(nbSugar)) return " with no sugar and therefore no stick";
-        return " with " + nbSugar  + " sugars and a stick";
+        return " with " + nbSugar + " sugars and a stick";
     }
 
     private boolean hasSugar(String nbSugar) {
