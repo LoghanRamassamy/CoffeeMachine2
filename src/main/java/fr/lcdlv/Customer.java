@@ -1,8 +1,8 @@
 package fr.lcdlv;
 
-public class Order {
+public class Customer {
 
-    public String of(String instruction) {
+    public String send(String instruction) {
         String nbSugar = numberOfSugar(instruction);
         String drinkType = getDrinkType(instruction);
         String result = "M:Drink maker makes 1 " + drinkType;

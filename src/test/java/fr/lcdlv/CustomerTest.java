@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class OrderTest {
+public class CustomerTest {
     @ParameterizedTest
     @CsvSource({
             "T::, M:Drink maker makes 1 tea with no sugar and therefore no stick",
@@ -16,10 +16,10 @@ public class OrderTest {
     })
     public void customer_instruction_is_drink_without_sugar_should_return_drink_message_without_sugar(String instruction, String expected) {
         // Given
-        Order order = new Order();
+        Customer customer = new Customer();
 
         // When
-        String result = order.of(instruction);
+        String result = customer.send(instruction);
 
         // Then
         assertThat(result).isEqualTo(expected);
@@ -33,10 +33,10 @@ public class OrderTest {
     })
     public void customer_instruction_is_drink_with_sugar_should_return_drink_message_with_sugar(String instruction, String expected) {
         // Given
-        Order order = new Order();
+        Customer customer = new Customer();
 
         // When
-        String result = order.of(instruction);
+        String result = customer.send(instruction);
 
         // Then
         assertThat(result).isEqualTo(expected);
