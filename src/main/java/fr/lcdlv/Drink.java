@@ -6,7 +6,8 @@ public enum Drink {
     H("chocolate", new Money(0.5)),
     Hh("extra hot chocolate", new Money(0.5)),
     C("coffee", new Money(0.6)),
-    Ch("extra hot coffee", new Money(0.6));
+    Ch("extra hot coffee", new Money(0.6)),
+    O("orange juice", new Money(0.6));
 
     private final String name;
     private final Money cost;
