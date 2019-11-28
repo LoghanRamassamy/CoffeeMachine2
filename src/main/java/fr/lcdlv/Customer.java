@@ -12,7 +12,11 @@ public class Customer {
 
     private String generateMessage() {
         if(isEnoughMoney()) return "M:Drink maker makes 1 " + drink.getName() + concatSugar(nbSugar);
-        return "M:Money missing " + (drink.getCost() - nbMoney);
+        return "M:Money missing " + calculateMissingMoney();
+    }
+
+    private double calculateMissingMoney() {
+        return drink.getCost() - nbMoney;
     }
 
     private boolean isEnoughMoney() {
