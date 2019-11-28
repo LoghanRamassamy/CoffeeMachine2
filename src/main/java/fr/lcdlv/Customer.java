@@ -3,9 +3,11 @@ package fr.lcdlv;
 public class Customer {
     private String nbSugar;
     private String drinkType;
+    private String nbMoney;
 
     public String send(String instruction) {
         splitInstruction(instruction);
+        if("0.4".equals(nbMoney) ) return generateMessage();
         return generateMessage();
     }
 
@@ -26,5 +28,6 @@ public class Customer {
         String[] instructionElements = instruction.split(":");
         drinkType = Drink.getNameOf(instructionElements[0]);
         nbSugar = instructionElements.length <= 1 ? "0" : instructionElements[1];
+        nbMoney = instructionElements.length <= 1 ? "0" : instructionElements[2];
     }
 }

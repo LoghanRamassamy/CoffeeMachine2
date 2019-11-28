@@ -44,6 +44,14 @@ public class CustomerTest {
 
     @Test
     public void customer_instruction_is_tea_without_sugar_with_exact_money_should_return_tea_message_without_sugar_with_exact_money() {
+        // Given
+        Customer customer = new Customer();
+
+        // When
+        String result = customer.send("T:0:0.4");
+
+        // Then
+        assertThat(result).isEqualTo("M:Drink maker makes 1 tea with no sugar and therefore no stick");
     }
 
 }
