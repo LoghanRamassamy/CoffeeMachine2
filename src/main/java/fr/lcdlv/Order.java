@@ -1,6 +1,6 @@
 package fr.lcdlv;
 
-public class Customer {
+public class Order {
 
     public String order(String instruction) {
         String nbSugar = numberOfSugar(instruction);
