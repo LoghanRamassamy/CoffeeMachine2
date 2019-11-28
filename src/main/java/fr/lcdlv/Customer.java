@@ -3,7 +3,7 @@ package fr.lcdlv;
 public class Customer {
     private String nbSugar;
     private Drink drink;
-    private String nbMoney;
+    private Double nbMoney;
 
     public String send(String instruction) {
         splitInstruction(instruction);
@@ -28,6 +28,6 @@ public class Customer {
         String[] instructionElements = instruction.split(":");
         drink = Drink.valueOf(instructionElements[0]);
         nbSugar = instructionElements.length <= 1 ? "0" : instructionElements[1];
-        nbMoney = instructionElements.length <= 1 ? "0" : instructionElements[2];
+        nbMoney = instructionElements.length <= 1 ? 0.0 : Double.parseDouble(instructionElements[2]);
     }
 }
