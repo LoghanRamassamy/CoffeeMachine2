@@ -10,7 +10,11 @@ public class CustomerTest {
     @CsvSource({
             "T:0:0.4, M:Drink maker makes 1 tea with no sugar and therefore no stick",
             "H:0:0.5, M:Drink maker makes 1 chocolate with no sugar and therefore no stick",
-            "C:0:0.6, M:Drink maker makes 1 coffee with no sugar and therefore no stick"
+            "C:0:0.6, M:Drink maker makes 1 coffee with no sugar and therefore no stick",
+
+            "Th:0:0.4, M:Drink maker makes 1 extra hot tea with no sugar and therefore no stick",
+            "Hh:0:0.5, M:Drink maker makes 1 extra hot chocolate with no sugar and therefore no stick",
+            "Ch:0:0.6, M:Drink maker makes 1 extra hot coffee with no sugar and therefore no stick"
     })
     public void customer_instruction_is_drink_without_sugar_should_return_drink_message_without_sugar(String instruction, String expected) {
         // Given
