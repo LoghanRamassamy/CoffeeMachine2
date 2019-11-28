@@ -6,9 +6,11 @@ public class Customer {
 
     public String send(String instruction) {
         splitInstruction(instruction);
-        String result = "M:Drink maker makes 1 " + drinkType;
-        result += concatSugar(nbSugar);
-        return result;
+        return generateMessage();
+    }
+
+    private String generateMessage() {
+        return "M:Drink maker makes 1 " + drinkType + concatSugar(nbSugar);
     }
 
     private String concatSugar(String nbSugar) {
