@@ -1,10 +1,11 @@
 package fr.lcdlv;
 
 public class Customer {
+    private String nbSugar;
+    private String drinkType;
 
     public String send(String instruction) {
-        String nbSugar = numberOfSugar(instruction);
-        String drinkType = getDrinkType(instruction);
+        splitInstruction(instruction);
         String result = "M:Drink maker makes 1 " + drinkType;
         result += concatSugar(nbSugar);
         return result;
@@ -19,18 +20,9 @@ public class Customer {
         return "0".equals(nbSugar);
     }
 
-    private String numberOfSugar(String instruction) {
-        String[] instructionElements = splitInstruction(instruction);
-        return instructionElements.length <= 1 ? "0" : instructionElements[1];
-    }
-
-    private String getDrinkType(String instruction) {
-        String[] instructionElements = splitInstruction(instruction);
-        String type = instructionElements[0];
-        return Drink.getNameOf(type);
-    }
-
-    private String[] splitInstruction(String instruction) {
-        return instruction.split(":");
+    private void splitInstruction(String instruction) {
+        String[] instructionElements = instruction.split(":");
+        drinkType = Drink.getNameOf(instructionElements[0]);
+        nbSugar = instructionElements.length <= 1 ? "0" : instructionElements[1];
     }
 }
