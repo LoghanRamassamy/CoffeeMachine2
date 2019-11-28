@@ -20,8 +20,8 @@ public class Customer {
     }
 
     private String numberOfSugar(String instruction) {
-        String[] arrOfStr = splitInstruction(instruction);
-        return arrOfStr.length <= 1 ? "0" : arrOfStr[1];
+        String[] instructionElements = splitInstruction(instruction);
+        return instructionElements.length <= 1 ? "0" : instructionElements[1];
     }
 
     private String getDrinkType(String instruction) {
