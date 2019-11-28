@@ -19,7 +19,7 @@ public class OrderTest {
         Order order = new Order();
 
         // When
-        String result = order.order(instruction);
+        String result = order.of(instruction);
 
         // Then
         assertThat(result).isEqualTo(expected);
@@ -36,7 +36,7 @@ public class OrderTest {
         Order order = new Order();
 
         // When
-        String result = order.order(instruction);
+        String result = order.of(instruction);
 
         // Then
         assertThat(result).isEqualTo(expected);

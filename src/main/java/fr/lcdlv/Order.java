@@ -2,7 +2,7 @@ package fr.lcdlv;
 
 public class Order {
 
-    public String order(String instruction) {
+    public String of(String instruction) {
         String nbSugar = numberOfSugar(instruction);
         String drinkType = getDrinkType(instruction);
         String result = "M:Drink maker makes 1 " + drinkType;
