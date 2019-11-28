@@ -15,7 +15,7 @@ public class Customer {
         return "M:Money missing " + calculateMissingMoney();
     }
 
-    private double calculateMissingMoney() {
+    private Double calculateMissingMoney() {
         return drink.getCost().subtract(nbMoney);
     }
 
@@ -36,6 +36,6 @@ public class Customer {
         String[] instructionElements = instruction.split(":");
         drink = Drink.valueOf(instructionElements[0]);
         nbSugar = instructionElements.length <= 1 ? "0" : instructionElements[1];
-        nbMoney = new Money(instructionElements.length <= 1 ? 0.0 : Double.parseDouble(instructionElements[2]));
+        nbMoney = new Money(Double.parseDouble(instructionElements[2]));
     }
 }

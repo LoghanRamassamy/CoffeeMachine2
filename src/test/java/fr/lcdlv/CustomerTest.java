@@ -42,7 +42,9 @@ public class CustomerTest {
 
     @ParameterizedTest
     @CsvSource({
-            "T:0:0.2, M:Money missing 0.2"
+            "T:0:0.2, M:Money missing 0.2",
+            "T:0:0.3, M:Money missing 0.1",
+            "C:0:0.1, M:Money missing 0.5"
     })
     public void customer_instruction_is_drink_no_enough_money_should_return_drink_message_with_money_missing(String instruction, String expected) {
         // Given
