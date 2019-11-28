@@ -7,7 +7,7 @@ public class Customer {
 
     public String send(String instruction) {
         splitInstruction(instruction);
-        if(drink.getCost().equals(nbMoney) ) return generateMessage();
+        if(drink.getCost() >= nbMoney) return generateMessage();
         return generateMessage();
     }
 
