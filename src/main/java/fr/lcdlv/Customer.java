@@ -3,7 +3,7 @@ package fr.lcdlv;
 public class Customer {
     private String nbSugar;
     private Drink drink;
-    private Double nbMoney;
+    private Money nbMoney;
 
     public String send(String instruction) {
         splitInstruction(instruction);
@@ -16,11 +16,11 @@ public class Customer {
     }
 
     private double calculateMissingMoney() {
-        return drink.getCost() - nbMoney;
+        return drink.getCost().subtract(nbMoney);
     }
 
     private boolean isEnoughMoney() {
-        return nbMoney >= drink.getCost();
+        return nbMoney.isBetterThan(drink.getCost());
     }
 
     private String concatSugar(String nbSugar) {
@@ -36,6 +36,6 @@ public class Customer {
         String[] instructionElements = instruction.split(":");
         drink = Drink.valueOf(instructionElements[0]);
         nbSugar = instructionElements.length <= 1 ? "0" : instructionElements[1];
-        nbMoney = instructionElements.length <= 1 ? 0.0 : Double.parseDouble(instructionElements[2]);
+        nbMoney = new Money(instructionElements.length <= 1 ? 0.0 : Double.parseDouble(instructionElements[2]));
     }
 }

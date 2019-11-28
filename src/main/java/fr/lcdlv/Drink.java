@@ -1,14 +1,14 @@
 package fr.lcdlv;
 
 public enum Drink {
-    T("tea", 0.4),
-    H("chocolate", 0.5),
-    C("coffee", 0.6);
+    T("tea", new Money(0.4)),
+    H("chocolate", new Money(0.5)),
+    C("coffee", new Money(0.6));
 
     private final String name;
-    private final Double cost;
+    private final Money cost;
 
-    Drink(String name, Double cost) {
+    Drink(String name, Money cost) {
         this.name = name;
         this.cost = cost;
     }
@@ -17,7 +17,7 @@ public enum Drink {
         return name;
     }
 
-    public Double getCost() {
+    public Money getCost() {
         return cost;
     }
 }
