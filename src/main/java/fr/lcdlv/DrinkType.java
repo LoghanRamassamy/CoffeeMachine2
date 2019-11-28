@@ -11,7 +11,7 @@ public enum DrinkType {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
+    public static String getNameOf(String type) {
+        return valueOf(type).name;
     }
 }
