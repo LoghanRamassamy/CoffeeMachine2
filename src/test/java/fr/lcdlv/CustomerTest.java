@@ -1,5 +1,6 @@
 package fr.lcdlv;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -39,6 +40,10 @@ public class CustomerTest {
 
         // Then
         assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    public void customer_instruction_is_tea_without_sugar_with_exact_money_should_return_tea_message_without_sugar_with_exact_money() {
     }
 
 }
