@@ -18,7 +18,11 @@ public enum Drink {
         this.cost = cost;
     }
 
-    public static String getNameOf(String drinkType) {
-        return valueOf(drinkType).name;
+    public String getName() {
+        return name;
+    }
+
+    public String getCost() {
+        return cost;
     }
 }

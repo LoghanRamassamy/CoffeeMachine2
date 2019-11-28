@@ -2,17 +2,17 @@ package fr.lcdlv;
 
 public class Customer {
     private String nbSugar;
-    private String drinkType;
+    private Drink drink;
     private String nbMoney;
 
     public String send(String instruction) {
         splitInstruction(instruction);
-        if("0.4".equals(nbMoney) ) return generateMessage();
+        if(drink.getCost().equals(nbMoney) ) return generateMessage();
         return generateMessage();
     }
 
     private String generateMessage() {
-        return "M:Drink maker makes 1 " + drinkType + concatSugar(nbSugar);
+        return "M:Drink maker makes 1 " + drink.getName() + concatSugar(nbSugar);
     }
 
     private String concatSugar(String nbSugar) {
@@ -26,7 +26,7 @@ public class Customer {
 
     private void splitInstruction(String instruction) {
         String[] instructionElements = instruction.split(":");
-        drinkType = Drink.getNameOf(instructionElements[0]);
+        drink = Drink.valueOf(instructionElements[0]);
         nbSugar = instructionElements.length <= 1 ? "0" : instructionElements[1];
         nbMoney = instructionElements.length <= 1 ? "0" : instructionElements[2];
     }
