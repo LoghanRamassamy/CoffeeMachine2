@@ -1,16 +1,14 @@
 package fr.lcdlv;
 
-import java.text.DecimalFormat;
-
 public class Money {
     private final Double value;
 
     public Money(Double value) {
-        this.value = (double)Math.round(value * 100) / 100; //value; // format(value);
+        this.value = value;
     }
 
     private Double format(Double value) {
-        return (double)Math.round(value * 100) / 100;
+        return (double) Math.round(value * 100) / 100;
     }
 
     public boolean isBetterThan(Money money) {
